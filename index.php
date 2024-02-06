@@ -14,9 +14,10 @@
     <h1>Knowledge😎</h1>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
+        <li><a href="/OpenLibrary/index.php">&larr;Back</a></li>
+        <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Mr Astley:&#41;</a></li>
         <li>
-          <a href="https://www.linkedin.com/in/shaganplaatjies/">Let's Connect</a>
+          <a href="https://www.linkedin.com/in/shaganplaatjies/">Let's Connect &rarr;</a>
         </li>
       </ul>
     </nav>
@@ -26,8 +27,9 @@
     <h2>Latest Books</h2>
     <form action="openLibraryBookScript.php" method="post">
       <label>
-        Enter an author's name (unencoded, plain text).
-        <input type="text" id="authorName" name="authorName" placeholder="J. K. Rowling" minlength="1" required />
+        Enter an author's name:
+        <input title="Only unencoded, plain text" type="text" id="authorName" name="authorName"
+          placeholder="J. K. Rowling" minlength="1" required />
       </label>
       <button type="submit">Buy Now!</button>
     </form>
