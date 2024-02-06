@@ -50,17 +50,12 @@ class BookFetcher
     echo "Books by {$authorName} saved to {$filename}.json\n";
   }
 
-  public function saveBooksTitleListByAuthor($authorName, $filename)
+  public function parseTitles($entryObjectArray)
   {
-    $authorOpenLibId = $this->fetchAuthorOpenLibIdFromName($authorName);
-
-    $entryObjArr = $this->fetchBooksByAuthor($authorOpenLibId);
-
     $entryTitlesArr = [];
 
-
-    if ($entryObjArr) {
-      foreach ($entryObjArr as $entryIndex => $entryObj) {
+    if ($entryObjectArray)
+      foreach ($entryObjectArray as $entryIndex => $entryObj) {
         if (is_array($entryObj))
           foreach ($entryObj as $entryObjectKey => $entryObjectKeyValue) {
             if ($entryObjectKey == "title")
@@ -68,7 +63,22 @@ class BookFetcher
           }
       }
 
+    if ($entryTitlesArr)
+      return $entryTitlesArr;
+    else
+      return false;
+  }
+
+  public function saveBooksTitleListByAuthor($authorName, $filename)
+  {
+    $authorOpenLibId = $this->fetchAuthorOpenLibIdFromName($authorName);
+
+    $entryObjArr = $this->fetchBooksByAuthor($authorOpenLibId);
+
+    if ($entryObjArr) {
+      $entryTitlesArr = $this->parseTitles($entryObjArr);
       echo "Entries found by $authorName:\n<pre>";
+
       $this->displayEntriesTable($entryTitlesArr);
 
     } else {
