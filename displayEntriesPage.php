@@ -26,7 +26,7 @@
           </li>
           <li>
             <button
-              onclick="window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ', '_blank')">Resume&nbsp;&#11123;</button>
+              onclick="window.open('/OpenLibrary/ShaganPlaatjiesResumeElixirr.pdf', '_blank')">Resume&nbsp;&#11123;</button>
           </li>
         </ul>
       </nav>
@@ -36,6 +36,7 @@
   <main class="container table-view">
 
     <h2>Latest Books</h2>
+    <button onclick="window.open('/OpenLibrary/Entries.json', '_blank')">JSON&nbsp;&rarr;</button>
     <?php
     if (isset($_POST['authorName'])) {
       require 'EntryFetcher.php';
