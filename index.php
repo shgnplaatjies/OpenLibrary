@@ -37,7 +37,8 @@
       <h2>Latest Books</h2>
       <form action="openLibraryBookScript.php" method="post">
         <label for="authorName">Enter an author's name:</label>
-        <input type="text" id="authorName" name="authorName" placeholder="J. K. Rowling" minlength="1" required />
+        <input type="text" id="authorName" name="authorName" placeholder="J. K. Rowling" minlength="1" maxlength="144"
+          required />
         <button type="submit">Search</button>
       </form>
     </div>
