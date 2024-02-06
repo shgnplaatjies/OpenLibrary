@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lil Open Library List</title>
+  <title>Open Library List</title>
   <link rel="stylesheet" href="style.css" />
 
 </head>

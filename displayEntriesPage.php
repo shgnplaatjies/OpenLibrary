@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Lil Open Library List</title>
+  <title>Open Library List</title>
   <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="style.css" />
