@@ -1,0 +1,166 @@
+html,
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: auto;
+}
+
+.container {
+  width: clamp(70vw, 50vw, 25rem);
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+main.table-view {
+  width: 100%;
+}
+
+header {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 1rem 0;
+}
+
+header h1 {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  margin-block: 0.5rem;
+}
+
+ul,
+li {
+  list-style: none;
+
+  text-align: center;
+}
+
+nav > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-grow: 1;
+}
+
+nav ul.right-menu {
+  flex-direction: row-reverse;
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fff;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  padding: 2rem 0;
+  background-color: #ecf0f1;
+}
+
+form {
+  max-width: 25rem;
+  margin: 0 auto;
+  background-color: #ecf0f1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+input,
+form button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  border: none;
+  padding: 1rem;
+  margin-inline: clamp(0.1rem, 0.5rem, 0.5rem);
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0.1rem 0.1rem 0.4rem #bdc3c7, -0.1rem -0.1rem 0.4rem #ffffff;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+button:hover {
+  background-color: #dfe6e9;
+  color: #34495e;
+  transform: translate(2px, 2px);
+}
+
+footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+
+  text-align: center;
+  display: flex;
+}
+
+table {
+  width: 80%;
+  max-width: 90%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
+  white-space: normal;
+}
+
+tr {
+  width: 80rem;
+}
+
+th {
+  background: linear-gradient(to right, #3498db, #2c3e50);
+  color: #ecf0f1;
+}
+
+td {
+  background: linear-gradient(to right, #ecf0f1, #f8f9fa);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  min-height: fit-content;
+}

@@ -45,7 +45,7 @@ class EntryFetcher
 
   public function saveBooksToJson($authorName, $books, $filename)
   {
-    file_put_contents($filename, json_encode(['books' => $books]));
+    file_put_contents("$filename.json", json_encode(['books' => $books]));
 
     echo "Books by {$authorName} saved to {$filename}.json\n";
   }
@@ -89,8 +89,6 @@ class EntryFetcher
 
     if ($entryObjArr) {
       $this->saveBooksToJson($authorName, $entryObjArr, $filename);
-
-      echo "Found{$entryObjArr}\n";
       return true;
     }
 
