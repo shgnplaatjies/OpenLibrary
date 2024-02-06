@@ -42,7 +42,9 @@
 
       $entryFetcher = new EntryFetcher();
       $authorName = isset($_POST['authorName']) ? $_POST['authorName'] : '';
-      $entries = $entryFetcher->saveBooksTitleListByAuthor($authorName, 'Entries');
+      $entryLimit = isset($_POST['entryLimit']) ? $_POST['entryLimit'] : '';
+      $entryOffset = isset($_POST['entryOffset']) ? $_POST['entryOffset'] : '';
+      $entries = $entryFetcher->saveEntriesTitleListByAuthor($authorName, 'Entries', $entryLimit, $entryOffset);
 
     }
 

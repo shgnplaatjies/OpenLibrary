@@ -30,9 +30,9 @@ class EntryFetcher
 
   }
 
-  public function fetchBooksByAuthor($openLibraryId, $bookLimit = 50, $offset = 0)
+  public function fetchEntriesByAuthor($openLibraryId, $entryLimit = 50, $entryOffset = 0)
   {
-    $request = "https://openlibrary.org/authors/{$openLibraryId}/works.json";
+    $request = "https://openlibrary.org/authors/{$openLibraryId}/works.json?limit={$entryLimit}&offset={$entryOffset}";
 
     $response = json_decode(file_get_contents($request), true);
 
@@ -43,9 +43,9 @@ class EntryFetcher
     }
   }
 
-  public function saveBooksToJson($authorName, $books, $filename)
+  public function saveEntriesToJson($authorName, $entries, $filename)
   {
-    file_put_contents("$filename.json", json_encode(['books' => $books]));
+    file_put_contents("$filename.json", json_encode(['entries' => $entries]));
 
     echo "Books by {$authorName} saved to {$filename}.json\n";
   }
@@ -69,11 +69,11 @@ class EntryFetcher
       return false;
   }
 
-  public function saveBooksTitleListByAuthor($authorName, $filename)
+  public function saveEntriesTitleListByAuthor($authorName, $filename, $entryLimit, $offsetLimit)
   {
     $authorOpenLibId = $this->fetchAuthorOpenLibIdFromName($authorName);
 
-    $entryObjArr = $this->fetchBooksByAuthor($authorOpenLibId);
+    $entryObjArr = $this->fetchEntriesByAuthor($authorOpenLibId, $entryLimit, $offsetLimit);
 
     if ($entryObjArr) {
       $entryTitlesArr = $this->parseTitles($entryObjArr);
@@ -88,7 +88,7 @@ class EntryFetcher
 
 
     if ($entryObjArr) {
-      $this->saveBooksToJson($authorName, $entryObjArr, $filename);
+      $this->saveEntriesToJson($authorName, $entryObjArr, $filename);
       return true;
     }
 
