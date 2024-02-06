@@ -19,7 +19,7 @@ class EntryFetcher
     $authorNameEncoded = rawurlencode($authorName);
     $request = "https://openlibrary.org/search/authors.json?q={$authorNameEncoded}";
 
-    $responseDecoded = json_decode(file_get_contents($request), true);
+    $responseDecoded = json_decode($this->secureFetch($request), true);
 
 
     if ($responseDecoded !== false)
@@ -30,11 +30,25 @@ class EntryFetcher
 
   }
 
+  public function secureFetch($request)
+  {
+    $ch = curl_init();
+
+    curl_setopt($ch, CURLOPT_URL, $request);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $response = curl_exec($ch);
+
+    curl_close($ch);
+
+    return $response;
+  }
+
   public function fetchEntriesByAuthor($openLibraryId, $entryLimit = 50, $entryOffset = 0)
   {
     $request = "https://openlibrary.org/authors/{$openLibraryId}/works.json?limit={$entryLimit}&offset={$entryOffset}";
 
-    $response = json_decode(file_get_contents($request), true);
+    $response = json_decode($this->secureFetch($request), true);
 
     if ($response !== false) {
       return $response["entries"];

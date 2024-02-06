@@ -55,7 +55,7 @@
   <footer>
     <div class="container">
       <p>
-        Made for fun (don't judge me) by Shagan Plaatjies. &copy; 2024 Lil Open
+        Shagan Plaatjies. &copy; 2024 Open
         Library List. All rights reserved.
       </p>
     </div>
