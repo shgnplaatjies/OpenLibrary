@@ -22,7 +22,7 @@
         <ul class="right-menu">
           <li>
             <button
-              onclick="window.open('https://www.linkedin.com/in/shaganplaatjies/', '_blank')">Connect&nbsp;&rarr;</button>
+              onclick="window.open('https://www.linkedin.com/in/shaganplaatjies/', '_blank')">LinkedIn&nbsp;&rarr;</button>
           </li>
           <li>
             <button
@@ -54,8 +54,7 @@
   <footer>
     <div class="container">
       <p>
-        Shagan Plaatjies. &copy; 2024 Open
-        Library List. All rights reserved.
+        <a href="https://github.com/shgnplaatjies/">💻 by Shagan Plaatjies. Check out my Github 😎 </a>
       </p>
     </div>
   </footer>

@@ -54,9 +54,9 @@
 
   <footer>
     <div class="container">
+
       <p>
-        Shagan Plaatjies. &copy; 2024 Open
-        Library List. All rights reserved.
+        <a href="https://github.com/shgnplaatjies/">💻 by Shagan Plaatjies. Check out my Github 😎 </a>
       </p>
     </div>
   </footer>
