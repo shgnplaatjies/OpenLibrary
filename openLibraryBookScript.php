@@ -29,7 +29,7 @@
 
       $entryFetcher = new EntryFetcher();
       $authorName = isset($_POST['authorName']) ? $_POST['authorName'] : '';
-      $entries = $entryFetcher->saveBooksTitleListByAuthor($authorName, 'Entries');
+      $entries = $entryFetcher->saveBooksTitleListByAuthor($authorName, 'Entries.json');
 
     }
 
