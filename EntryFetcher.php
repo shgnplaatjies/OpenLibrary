@@ -77,7 +77,7 @@ class EntryFetcher
 
     if ($entryObjArr) {
       $entryTitlesArr = $this->parseTitles($entryObjArr);
-      echo "Entries found by $authorName:\n<pre>";
+      echo "<p>Entries found by $authorName:\n</p><pre>";
 
       $this->displayEntriesTable($entryTitlesArr);
 
